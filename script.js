@@ -6,7 +6,6 @@ function handleLogin(event) {
     console.log(`username:  ${username}`);
     console.log(`password:  ${password}`);
 
-    alert(`Login com:  ${username}, \n ${password}`);
-
-    document.getElementById('form-logion').addEventListener('submit', handleLogin);
+    alert(`Login com:  ${username} \n Password: ${password}`);
  } 
+ document.getElementById('login-form').addEventListener('submit', handleLogin);
