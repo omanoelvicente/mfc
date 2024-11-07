@@ -4,11 +4,18 @@
         $sobrenome = $_POST['sobrenome'];
         $idade = $_POST['idade'];
 
+        validadarCampos($nome, $sobrenome, $idade);
+
+       
+
+    }
+
+    function validadarCampos($nome, $sobrenome, $idade) {
         if ($nome == ''|| $sobrenome == '' || $idade == '') {
             echo "Preencha todos os campos";
         } else {
-            echo  'Nome:' . ' ' . $nome . ' ' . 'Sobrebnome:' . ' ' . $sobrenome . PHP_EOL;
-            echo 'Idade:' . $idade . ' ' . PHP_EOL;
+            echo  'Nome:' . ' ' . $nome . ' ' . 'Sobrebnome:' . ' ' . $sobrenome;
+            echo 'Idade:' . $idade . ' ';
 
         }
 
@@ -26,7 +33,7 @@
     <title>Form</title>
 </head>
 <body>
-    <form action="index.php" method="post"></form>
+    <form action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?> method="post">
     <input type="text" name="nome">
     <label for="nome"> Nome</label>
     <input type="text" name="sobrenome">
@@ -34,5 +41,6 @@
     <input type="number" name="idade">
     <label for="idade">Idade</label>
     <button type="submit" name="btn-submit"> Enviar</button>
+    </form>
 </body>
 </html>
